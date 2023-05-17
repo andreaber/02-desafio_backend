@@ -52,7 +52,8 @@ class ProductManager {
         if (index !== -1) {
         const isValid = await this.#validateProduct(update)
         if (!isValid) {
-            return console.log("Error al actualizar: actualización inválida")
+            // console.log("Error al actualizar: actualización inválida")
+            return 
         }
         products[index] = { ...products[index], ...update }
         await fs.promises.writeFile(
@@ -61,9 +62,11 @@ class ProductManager {
             this.#format
         )
         this.products = products
-        return console.log("Producto Actualizado", products[index]);
+        console.log("Producto Actualizado", products[index])
+        return 
         }
-        return console.log("Error al actualizar: Producto no encontrado");
+        // console.log("Error al actualizar: Producto no encontrado")
+        return 
     }
 
 

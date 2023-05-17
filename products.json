@@ -1,12 +1,12 @@
 [
 	{
 		"id": 1,
-		"title": "producto 1",
-		"description": "Descripción del producto 1",
-		"price": 100,
+		"title": "Producto 1",
+		"description": "Descripción del Producto 1",
+		"price": 400,
 		"thumbnail": "ruta-imagen-1.jpg",
 		"code": "001",
-		"stock": 25
+		"stock": 50
 	},
 	{
 		"id": 2,
