@@ -18,6 +18,7 @@ class ProductManager {
     #validateProduct = async (product) => {
         for (const key in product) {
             if (!product[key]) {
+                console.log(`La propiedad ${key} es falsa: `, product[key])
                 console.log("Todos los campos son obligatorios")
                 return false
             }
@@ -64,6 +65,7 @@ class ProductManager {
         }
         return console.log("Error al actualizar: Producto no encontrado");
     }
+
 
     deleteProduct = async (id) => {
         const products = await this.getProducts();
@@ -114,14 +116,18 @@ const manager = new ProductManager("./products.json")
 
 // Se llamará al método “updateProduct” y se intentará cambiar un campo de algún producto, se evaluará que no se elimine el id y que sí se haya hecho la actualización:
 
-// await manager.updateProduct(1, {
+// const update = {
 //     title: "Producto 1",
 //     description: "Descripción del Producto 1",
 //     price: 400,
 //     thumbnail: "ruta-imagen-1.jpg",
 //     code: "001",
 //     stock: 50
-// })
+// }
+
+// console.log('Update object:', update)
+// await manager.updateProduct(1, update)
+
 
 // Se llamará al método “deleteProduct”, se evaluará que realmente se elimine el producto o que arroje un error en caso de no existir:
 // console.log(await manager.deleteProduct(1))
